@@ -11,3 +11,26 @@ assert np.array_equal(p.get_pbest(), p.pbest), \
     "FAIL: get_pbest() is returning the wrong attribute"
 
 print("PASS: get_pbest() correctly returns pbest without gbest")
+
+
+## rastring test block ##
+
+from pso_v3 import rastrigin
+
+print("\nTesting Rastrigin function:")
+
+test_cases = [
+    (np.array([0]), 0),
+    (np.array([0, 0]), 0),
+    (np.array([1, 2, 3]), 14),
+    (np.array([1, 1, 1]), 3)
+]
+
+for x, expected in test_cases:
+    result = rastrigin(x)
+    print(f"Input: {x} | Result: {result:.6f} | Expected: {expected}")
+
+    assert np.isclose(result, expected), \
+        f"FAIL: Rastrigin incorrect for input {x}"
+
+print("PASS: All Rastrigin tests passed!")
