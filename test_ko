@@ -1,0 +1,13 @@
+import numpy as np
+from pso_v3 import Particle
+
+p = Particle(dim=2, xmin=-10, xmax=10)
+
+# Remove gbest to ensure the getter doesn't depend on it
+if hasattr(p, "gbest"):
+    del p.gbest
+
+assert np.array_equal(p.get_pbest(), p.pbest), \
+    "FAIL: get_pbest() is returning the wrong attribute"
+
+print("PASS: get_pbest() correctly returns pbest without gbest")

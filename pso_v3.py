@@ -43,7 +43,7 @@ class Particle:
 
     def get_pbest(self):
         """The particle's best position so far."""
-        return self.gbest
+        return self.pbest
 
     def update(self, gbest):
         """One step: keep moving, plus a pull toward pbest and a pull toward gbest's best."""
