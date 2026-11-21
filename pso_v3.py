@@ -66,7 +66,7 @@ def booth(x):
 def rastrigin(x):
     """Rastrigin's function, any dimension. Minimum 0 at the origin, and many local minima."""
     n = len(x)
-    return 10 * n + sum(x[i] ** 2 - 10 * np.cos(2 * np.pi * x[i]) for i in range(n - 1))
+    return 10 * n + sum(x[i] ** 2 - 10 * np.cos(2 * np.pi * x[i]) for i in range(n))
 
 
 def sphere(x):
