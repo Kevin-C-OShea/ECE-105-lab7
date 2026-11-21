@@ -34,3 +34,13 @@ for x, expected in test_cases:
         f"FAIL: Rastrigin incorrect for input {x}"
 
 print("PASS: All Rastrigin tests passed!")
+
+## Divide by zero test ##
+
+from pso_v3 import run_pso
+
+print("\nTesting divide-by-zero fix:")
+
+x, value, history = run_pso("sphere", 2, 20, -10, 10, 50)
+
+print("PASS: No divide-by-zero error!")
